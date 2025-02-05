@@ -1,0 +1,17 @@
+.header__image {
+    max-height: 400px!important;;
+}
+.Collections__image  {
+    max-height: 400px!important;;
+}
+@media screen and (max-width: 700px) {
+    .Collections .owl-nav button span{
+        padding: 1px 21px!important;;
+    }
+    #room,#location,#opening,#opening{
+        padding: 80px 10px;
+    }
+}
+.owl-carousel .owl-item img{
+    object-fit: cover!important;;
+ }

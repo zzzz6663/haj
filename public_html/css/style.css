@@ -1,0 +1,1018 @@
+@charset "UTF-8";
+/* @font-face {
+  font-family: "vazir";
+  src: url("../fonts/vazir/Vazir-Bold-FD-WOL.woff") format("woff2"), url("../fonts/vazir/Vazir-bold-FD-WOL.woff") format("woff"), url("../fonts/vazir/Vazir-bold-FD-WOL.ttf") format("truetype");
+} */
+@font-face {
+  font-family: "dima";
+  src: url("../fonts/dima/Dima Naskh Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "vazir";
+  src: url("../fonts/vazir/Vazir-Bold-FD-WOL.woff") format("woff2"), url("../fonts/vazir/Vazir-Bold-FD-WOL.woff") format("woff"), url("../fonts/vazir/Vazir-Bold-FD-WOL.ttf") format("truetype");
+}
+@font-face {
+  font-family: "dima";
+  src: url("../fonts/dima/Dima Naskh Regular.ttf") format("truetype");
+}
+body{
+  font-family:vazir ;
+}
+.tran {
+  transition: 0.7s;
+}
+
+.none {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 150vh; /* اضافه کردن ارتفاع برای ایجاد اسکرول */
+  background-color: #262626;
+  font-family: vazir!important;
+  line-height: 2;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.row {
+  margin: 0px;
+}
+
+.none {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #ffffff;
+}
+
+p {
+  color: #828282;
+  line-height: 2;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .room__titr {
+    font-size: 20px !important;
+  }
+  .Collections__titr {
+    font-size: 20px !important;
+  }
+}
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+.tran {
+  transition: 0.7s;
+}
+
+.none {
+  display: none;
+}
+
+.button__green {
+  background: #1aa725; /* رنگ اصلی */
+  border-radius: 8px;
+  padding: 8px 40px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.4s ease-in-out; /* انیمیشن نرم */
+  position: relative;
+  overflow: hidden; /* برای جلوگیری از خروج افکت */
+}
+.button__green::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3); /* افکت درخشش کم‌رنگ */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease-in-out;
+  z-index: 0;
+}
+.button__green:hover {
+  background: rgb(32.8704663212, 211.1295336788, 46.7772020725); /* روشن‌تر شدن پس‌زمینه */
+  color: #000000; /* تغییر رنگ متن */
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* تابش سبز */
+}
+.button__green:hover::before {
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+}
+.button__icon {
+  margin-left: 4px;
+}
+
+.header {
+  background: #010101;
+}
+.header__item {
+  display: inline-block;
+  position: relative;
+  margin: 0px 20px;
+  padding: 5px 10px;
+}
+.header__nav {
+  line-height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
+}
+.header__link {
+  color: #ffffff;
+}
+.header__item:hover .header__Subcategory {
+  max-height: 300px;
+}
+.header__Subcategory {
+  max-height: 0; /* زیرمنو مخفی است */
+  overflow: hidden; /* مخفی کردن محتوا هنگام انیمیشن */
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #444444;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 10;
+  width: 200px;
+  transition: max-height 0.7s ease;
+  border-radius: 15px;
+  width: 120px;
+}
+@media (max-width: 1400px) {
+  .header__menu {
+    display: none; /* پنهان کردن منوی اصلی */
+  }
+  .header .button__header {
+    display: none;
+  }
+  .header__toggle {
+    display: inline-block;
+    position: absolute;
+    right: 32px;
+  }
+}
+@media (min-width: 1401px) {
+  .header__menu {
+    display: block; /* نمایش منوی اصلی */
+  }
+  .header__toggle {
+    display: none; /* پنهان کردن دکمه mmenu */
+  }
+}
+.header__off {
+  text-align: center;
+}
+.header__off ul {
+  position: relative;
+  display: inline-block;
+  background: #191919;
+  border-radius: 10px;
+  bottom: -45px;
+}
+.header__off ul li {
+  padding: 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.header__off ul li:nth-child(2), .header__off ul li:nth-child(3) {
+  border-left: 1px solid #3f3f3f;
+}
+.header__off ul li:nth-child(1) {
+  background: #c00502;
+  font-size: 25px;
+  margin: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media (max-width: 980px) {
+  .header .off {
+    font-size: 10px;
+    margin: 0px 5px;
+  }
+  .header .off-item {
+    padding: 0px;
+  }
+}
+@media (max-width: 980px) and (max-width: 600px) {
+  .header__off ul {
+    position: relative;
+    display: inline-block;
+    background: #191919;
+    border-radius: 10px;
+    bottom: -35px;
+    width: 210px;
+    padding: 15px;
+  }
+  .header__off ul li:nth-child(2), .header__off ul li:nth-child(3) {
+    border: none;
+    border-bottom: 1px solid #fff3f3;
+  }
+  .header__off ul li:nth-child(1) {
+    background: #c00502;
+    font-size: 25px;
+    margin: 0px;
+    border-radius: 10px;
+  }
+}
+
+.logo {
+  margin-top: 12px;
+}
+
+.titr1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: dima!important;
+  border-radius: 32px;
+  padding: 19px;
+  margin-bottom: 10px;
+}
+
+.titr2 {
+  font-family: vazir!important;
+  margin-top: 5px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+@media (max-width: 1500px) {
+  .titr1 {
+    font-size: 15px;
+    padding: 5px;
+  }
+  .titr2 {
+    font-size: 15px;
+  }
+  .titr3 {
+    font-size: 20px;
+  }
+}
+.header .owl-carousel {
+  position: relative; /* والد را برای موقعیت‌دهی مطلق تنظیم می‌کنیم */
+}
+
+.header .owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%; /* فلش‌ها در وسط ارتفاع اسلایدر */
+  width: 100%; /* برای قرار دادن فلش‌ها در دو طرف */
+  transform: translateY(-50%);
+  display: flex; /* تنظیم برای قرار دادن فلش‌ها در چپ و راست */
+  justify-content: space-between; /* فلش‌ها در دو طرف */
+  pointer-events: none; /* برای جلوگیری از ایجاد مشکل در کلیک روی محتوا */
+}
+
+.header .owl-carousel .owl-prev,
+.header .owl-carousel .owl-next {
+  pointer-events: all; /* فعال‌سازی کلیک روی دکمه‌ها */
+  background: rgba(230, 230, 230, 0.1490196078);
+  border: 1px solid rgba(230, 230, 230, 0.1490196078);
+  border-radius: 50%;
+  padding: 10px 20px;
+  color: #fff3f3;
+  font-size: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header .owl-carousel .owl-prev {
+  left: -30px; /* فاصله از سمت چپ */
+}
+
+.header .owl-carousel .owl-next {
+  right: -30px; /* فاصله از سمت راست */
+}
+
+.header .owl-carousel .owl-nav button span.active {
+  background-color: #ff5733; /* رنگ فلش فعال */
+  color: white;
+}
+
+.header .owl-nav button span {
+  background: rgba(230, 230, 230, 0.1490196078);
+  border: 1px solid rgba(230, 230, 230, 0.1490196078);
+  border-radius: 50%;
+  padding: 10px 30px;
+  color: #fff3f3;
+  font-size: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item_hotel {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.header__nav .container {
+  max-width: 2012px;
+}
+
+.but-r {
+  margin-left: 80px;
+}
+
+.but-l {
+  margin-right: 80px;
+}
+
+.footer {
+  background: #191919;
+  padding: 60px;
+}
+.footer__item {
+  margin-bottom: 15px;
+}
+.footer__social {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.footer__text {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6e6e6e;
+}
+.footer__logo {
+  width: 50% !important;
+}
+.footer__icon {
+  background: #232323;
+  border: 1px solid rgba(243, 245, 246, 0.2);
+  border-radius: 17px;
+  padding: 3px 10px;
+  display: inline-block;
+}
+@media (max-width: 980px) {
+  .footer__titr {
+    background: #910806;
+    padding: 10px 0px;
+  }
+  .footer__item {
+    text-align: center;
+  }
+  .footer__logo {
+    margin: 0 auto;
+  }
+}
+
+.logo_f {
+  width: 40%;
+  display: inline-block;
+}
+
+.hover {
+  height: auto;
+  transition: all 0.4s ease-in-out; /* انیمیشن صاف */
+  transform: scale(1); /* اندازه اولیه */
+}
+
+.hover:hover {
+  transform: scale(1.1); /* بزرگ‌تر شدن بدون چرخش */
+  filter: brightness(1.2); /* افزایش روشنایی */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* سایه نرم */
+}
+
+.rast {
+  margin-right: 60px;
+}
+
+.copy {
+  padding: 0px;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3019607843);
+  background: #191919;
+  margin: 0px;
+  padding-bottom: 8px;
+}
+
+@media only screen and (max-width: 992px) {
+  body {
+    text-align: center !important;
+  }
+  .about__info {
+    margin-bottom: 25px;
+  }
+  .order1 {
+    order: 2;
+  }
+  .order2 {
+    order: 1;
+  }
+  .Mmenu {
+    display: inline-block;
+    margin: 15px;
+  }
+  .nav__list {
+    display: none;
+  }
+  .nav__icon {
+    text-align: center;
+  }
+  .address__locate {
+    font-size: 9px;
+  }
+}
+.address__locate {
+  display: inline-block;
+  color: #7d7d7d;
+  padding: 2px 12px;
+  margin: 0px;
+}
+.address__border-left {
+  border-left: 1px solid #7d7d7d;
+  padding-left: 19px;
+  line-height: 0px;
+}
+.inod *{
+    color:#e1e1e1;
+}
+.Collections {
+  background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(40, 40, 40, 0.74)), url("../images/back.png");
+  background-size: cover; /* برای پوشش کامل */
+  background-repeat: no-repeat; /* جلوگیری از تکرار */
+  text-align: center;
+  padding-top: 100px;
+}
+.Collections__titr {
+  font-weight: 400;
+  line-height: 52px;
+  font-family: dima!important;
+}
+.Collections__button {
+  background: #910806; /* رنگ اولیه */
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* جلوگیری از نمایش افکت بیرون از دکمه */
+  transition: all 0.4s ease-in-out; /* انیمیشن صاف */
+  z-index: 1;
+}
+.Collections__button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%);
+  transition: all 0.4s ease-in-out;
+  z-index: 0;
+  transform: scale(0); /* حالت اولیه، کوچک */
+}
+.Collections__button:hover::before {
+  transform: scale(1); /* بزرگ شدن افکت */
+}
+.Collections__button:hover {
+  background: linear-gradient(90deg, #ff1e1e, #910806); /* گرادیان جذاب */
+  box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.5); /* سایه قرمز پویا */
+  transform: translateY(-3px); /* بالا رفتن دکمه */
+  color: #ffffff; /* رنگ متن ثابت */
+}
+.Collections__button span {
+  position: relative;
+  z-index: 1; /* متن بالای افکت قرار گیرد */
+}
+.Collections__item {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* انیمیشن صاف */
+}
+.Collections__item:hover {
+  transform: scale(0.95); /* کمی کوچکتر شدن */
+}
+.Collections__image {
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.owl-carousel .owl-dots {
+  text-align: center; /* تنظیمات مرکز چین برای نقاط */
+  padding: 15px 0px;
+}
+
+.owl-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  background-color: #555555 !important; /* رنگ پس‌زمینه برای نقاط */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  transition: background-color 0.3s;
+}
+
+.owl-carousel .owl-dot.active {
+  background-color: #ff0808 !important; /* رنگ فعال نقطه */
+}
+
+.Collections .owl-carousel {
+  position: relative; /* والد را برای موقعیت‌دهی مطلق تنظیم می‌کنیم */
+}
+
+.Collections .owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%; /* فلش‌ها در وسط ارتفاع اسلایدر */
+  width: 100%; /* برای قرار دادن فلش‌ها در دو طرف */
+  transform: translateY(-50%);
+  display: flex; /* تنظیم برای قرار دادن فلش‌ها در چپ و راست */
+  justify-content: space-between; /* فلش‌ها در دو طرف */
+  pointer-events: none; /* برای جلوگیری از ایجاد مشکل در کلیک روی محتوا */
+}
+
+.Collections .owl-carousel .owl-prev,
+.Collections .owl-carousel .owl-next {
+  pointer-events: all; /* فعال‌سازی کلیک روی دکمه‌ها */
+  background: rgba(230, 230, 230, 0.1490196078);
+  border: 1px solid rgba(230, 230, 230, 0.1490196078);
+  border-radius: 50%;
+  padding: 10px 20px;
+  color: #fff3f3;
+  font-size: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Collections .owl-carousel .owl-prev {
+  left: -30px; /* فاصله از سمت چپ */
+}
+
+.Collections .owl-carousel .owl-next {
+  right: -30px; /* فاصله از سمت راست */
+}
+
+.Collections .owl-carousel .owl-nav button span.active {
+  background-color: #ff5733; /* رنگ فلش فعال */
+  color: white;
+}
+
+.Collections .owl-nav button span {
+  background: rgba(230, 230, 230, 0.1490196078);
+  border: 1px solid rgba(230, 230, 230, 0.1490196078);
+  border-radius: 50%;
+  padding: 10px 30px;
+  color: #fff3f3;
+  font-size: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.number {
+  background: url("../images/back2.png");
+  background-size: cover; /* برای پوشش کامل */
+  background-repeat: no-repeat;
+  padding: 40px 0px;
+}
+.number__item {
+  height: 30px;
+  padding: 0px;
+}
+.number__item:nth-child(1), .number__item:nth-child(2), .number__item:nth-child(4) {
+  border-left: 1px solid rgba(217, 217, 217, 0.4);
+}
+.number__item:nth-child(1), .number__item:nth-child(2), .number__item:nth-child(3) {
+  margin-bottom: 40px;
+}
+.number__item:nth-child(5), .number__item:nth-child(3) {
+  padding-right: 30px;
+}
+.number__item:nth-child(1) {
+  padding-left: 30px;
+}
+.number__text {
+  display: inline-block;
+}
+.number__red {
+  display: inline-block;
+  color: #EC1E24;
+}
+.number .border_left {
+  border-left: 2px solid rgba(217, 217, 217, 0.4);
+  padding-left: 110px;
+}
+@media (max-width: 800px) {
+  .number__item {
+    text-align: right !important;
+    border: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 1000px) {
+  .number__item {
+    border: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    margin-bottom: 40px !important;
+  }
+}
+
+.number .container {
+  max-width: 900px !important;
+}
+
+#room {
+  padding: 80px;
+  background: #1a1a1a;
+}
+
+.room__item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.room__lable {
+  position: absolute;
+  top: 31px;
+  background: #e60000;
+  right: 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 0px 11px;
+}
+.room__image {
+  background-image: url("../images/room.png");
+}
+.room__inner {
+  padding: 12px;
+}
+.room__titr {
+  display: inline-block;
+  font-weight: 700;
+}
+.room__titr:nth-child(2) {
+  color: #EC1E24;
+}
+.room__text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin-bottom: 0px !important;
+}
+.room__box {
+  background: #313030;
+  border-radius: 15px;
+}
+.room__box {
+  background-color: #313030;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px auto;
+}
+.room__hotel {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #45af4d;
+  background: rgba(163, 186, 164, 0.2);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.room .button__green {
+  display: block;
+}
+.room__name {
+  text-align: right;
+}
+.room__star {
+  display: inline;
+  font-size: 17px;
+  font-weight: 600;
+  color: #f3f5f6;
+  margin: 0;
+}
+.room__hemmat {
+  display: inline;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f3f5f6;
+}
+.room__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1490196078);
+}
+.room__dinar {
+  font-size: 18px;
+  color: rgba(243, 245, 246, 0.5019607843);
+  font-weight: 500;
+}
+.room__rial {
+  font-size: 18px;
+  color: #f3f5f6;
+  font-weight: 600;
+}
+.room__details {
+  border-radius: 5px;
+  font-size: 12px;
+  color: #555;
+  margin: 15px 0;
+}
+.room__details p {
+  margin: 5px 0;
+  padding: 0px 8px;
+  font-size: 8px;
+  font-weight: 600;
+}
+.room__details p:nth-child(1), .room__details p:nth-child(2) {
+  border-left: 1px solid rgba(255, 255, 255, 0.1490196078);
+}
+@media (max-width: 1800px) {
+  .room__box {
+    width: 340px;
+  }
+  .room__dinar {
+    font-size: 10px;
+    color: rgba(243, 245, 246, 0.5019607843);
+    font-weight: 500;
+  }
+  .room__rial {
+    font-size: 10px;
+    color: #f3f5f6;
+    font-weight: 600;
+  }
+  .room__details p:nth-child(1), .room__details p:nth-child(2) {
+    border-left: none;
+  }
+  .room__star {
+    font-size: 11px;
+  }
+  .room__hemmat {
+    font-size: 11px;
+  }
+  .room__details {
+    padding: 0px;
+    font-size: 9px;
+    margin: 5px 0;
+  }
+}
+
+.room .owl-carousel .owl-dots {
+  text-align: center; /* تنظیمات مرکز چین برای نقاط */
+}
+
+.room .owl-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  background-color: #555555 !important; /* رنگ پس‌زمینه برای نقاط */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  transition: background-color 0.3s;
+}
+
+.room .owl-carousel .owl-dot.active {
+  background-color: #ff0808 !important; /* رنگ فعال نقطه */
+}
+
+.room .owl-carousel .owl-nav {
+  display: inline;
+  position: absolute;
+  left: 5px;
+  top: -104px;
+}
+
+.room .owl-carousel .owl-prev {
+  margin: 5px;
+}
+
+.room .owl-nav button span {
+  background: rgba(230, 230, 230, 0.1490196078);
+  border: 1px solid rgba(230, 230, 230, 0.1490196078);
+  border-radius: 50%;
+  padding: 10px 30px;
+  color: #fff3f3;
+  font-size: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.room .owl-nav button span.active {
+  background-color: #ff5733; /* رنگ فلش فعال */
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .room .owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%; /* فلش‌ها در وسط ارتفاع اسلایدر */
+    width: 107%; /* برای قرار دادن فلش‌ها در دو طرف */
+    transform: translateY(-50%);
+    display: flex; /* تنظیم برای قرار دادن فلش‌ها در چپ و راست */
+    justify-content: space-between; /* فلش‌ها در دو طرف */
+    pointer-events: none; /* برای جلوگیری از ایجاد مشکل در کلیک روی محتوا */
+    left: -13px;
+  }
+  .room .owl-carousel .owl-prev,
+  .room .owl-carousel .owl-next {
+    pointer-events: all; /* فعال‌سازی کلیک روی دکمه‌ها */
+    background: rgba(230, 230, 230, 0.1490196078);
+    border: 1px solid rgba(230, 230, 230, 0.1490196078);
+    border-radius: 50%;
+    padding: 10px 20px;
+    color: #fff3f3;
+    font-size: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .room .owl-carousel .owl-prev {
+    left: -30px !important; /* فاصله از سمت چپ */
+  }
+  .room .owl-carousel .owl-next {
+    right: -30px !important; /* فاصله از سمت راست */
+  }
+  .room .owl-carousel .owl-nav button span.active {
+    background-color: #ff5733; /* رنگ فلش فعال */
+    color: white;
+  }
+  .room .owl-nav button span {
+    background: rgba(230, 230, 230, 0.1490196078);
+    border: 1px solid rgba(230, 230, 230, 0.1490196078);
+    border-radius: 50%;
+    padding: 10px 30px;
+    color: #fff3f3;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.room__inner .text-end {
+  margin-bottom: 10px;
+}
+
+.one {
+  margin-right: -7px;
+}
+
+.hover_box {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* انیمیشن صاف */
+}
+
+.hover_box:hover {
+  transform: scale(0.95); /* کمی کوچکتر شدن */
+}
+
+.owl-nav button span:hover {
+  color: #cb0000; /* رنگ متن هنگام هاور */
+  border: 1px solid #cb0000; /* حاشیه هنگام هاور */
+  background-color: rgba(230, 230, 230, 0.1490196078);
+}
+
+#location {
+  padding: 60px;
+  background: #232323;
+}
+#location .location__image img {
+  border-radius: 10px;
+}
+#location .location__titr {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: right;
+}
+
+#opening {
+  background: #910806;
+  padding: 60px;
+}
+
+.opening {
+  line-height: 22px;
+}
+.opening__titr {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.opening__text {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+.opening__button {
+  all: unset;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  padding: 15px 41px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* برای افکت داخلی */
+}
+.opening__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* رنگ هاور */
+  transition: width 0.3s ease-in-out;
+  z-index: 0;
+}
+.opening__button:hover::before {
+  width: 100%; /* افکت پر شدن */
+}
+.opening__button:hover {
+  color: #000; /* تغییر رنگ متن هنگام هاور */
+  background: #FFFFFF; /* پس‌زمینه کامل */
+  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3); /* سایه حرفه‌ای */
+}
+.opening__button span {
+  position: relative;
+  z-index: 1; /* متن روی افکت قرار گیرد */
+}
+@media (max-width: 995px) {
+  .opening .opening__hover {
+    text-align: center !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

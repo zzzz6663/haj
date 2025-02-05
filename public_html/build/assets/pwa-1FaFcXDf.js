@@ -1,0 +1,1 @@
+console.log(4444);"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js",{scope:"/"}).then(function(o){console.log("Registration Succeded , Scope is : "+o.scope),console.log(o)}).catch(function(o){console.log(o)})});
