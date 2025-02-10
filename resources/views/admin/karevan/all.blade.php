@@ -9,7 +9,7 @@
                 <p>شما در مجموع
 
                     {{ $karevans->total() }}
-                    کاروان در سیستم دارید.</p>
+                    کاروان در دارید.</p>
             </div>
         </div>
         <!-- .nk-block-head-content -->
