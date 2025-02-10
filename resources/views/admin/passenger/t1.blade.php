@@ -55,7 +55,7 @@
         <div class="card-inner-group">
             <div class="card-inner position-relative card-tools-toggle">
                 @include("main.error")
-                <form action="{{ route('reports',['type'=>"t1"]) }}" method="get" autocomplete="off">
+                <form action="{{ route('reports',['type'=>"t1"]) }}" id="s_en" method="get" autocomplete="off">
                     @csrf
                     @method('get')
                     <input type="text" hidden  value="t1" name="type">
@@ -69,7 +69,7 @@
 
                                         <div class="mb-1">  --}}
                                             <label class="form-label" for="select_passenger">زائر  </label>
-                                            <select class=" form-control select2 " name="passenger_id" id="select_passenger" >
+                                            <select class=" form-control select2" name="passenger_id" id="select_passenger" >
                                                 <option value="">انتخاب کنید </option>
 
                                             </select>
@@ -121,8 +121,8 @@
 
                                 <div class="form-wrap w-400px">
 <br>
-                                        <input type="submit" name='pdf' value="Pdf" class=" inline-block">
-                                        <input type="submit" name='Excel' value="Excel" class=" inline-block">
+                                        <input type="submit" name='pdf' value="Pdf" class="inline-block ">
+                                        <input type="submit" name='Excel' value="Excel" class="inline-block ">
                                         <button class="btn btn-secondary">
                                             جستجو
                                         </button>
@@ -132,7 +132,7 @@
 
                                     @if(request("_token"))
                                     <a href="{{ route('reports',['type'=>"t1"]) }}"
-                                        class="btn inline-block btn-danger"><i
+                                        class="inline-block btn btn-danger"><i
                                             class="fas fa-times-circle"></i>
                                             <span style="padding-right:10px ">
                                                 لغو جستجو
@@ -147,8 +147,8 @@
                         <div class="row">
                             <div class="col-lg-3">
 
-                                <input type="submit" name='pdf' value="Pdf" class=" inline-block">
-                                <input type="submit" name='Excel' value="Excel" class=" inline-block">
+                                <input type="submit" name='pdf' value="Pdf" class="inline-block ">
+                                <input type="submit" name='Excel' value="Excel" class="inline-block ">
                                 <button class="btn btn-secondary">
                                     جستجو
                                 </button>
@@ -216,22 +216,7 @@
                                 {{__("status.". $passenger->status) }}
                             </span>
                         </td>
-                            {{--
-                        <td>
-                            <a class="btn btn-success" href="{{route("exam.user",$passenger->id)}}">
-                                معایته
 
-                            </a>
-                            <a class="btn btn-primary" href="{{route("history.user",$passenger->id)}}">
-                                تاریخچه
-                            </a>
-                            @if($passenger->status !="un_review")
-                            <a class="btn btn-danger" href="{{route("reset.user",$passenger->id)}}">
-                                ریست
-                            </a>
-                            @endif
-
-                        </td>  --}}
 
                     </tr>
                     @endforeach

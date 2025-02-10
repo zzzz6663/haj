@@ -84,7 +84,7 @@
         </div>
 
         {{-- @if (Request::is('admin/*'))
-        <div class="app align-content-stretch d-flex flex-wrap">
+        <div class="flex-wrap app align-content-stretch d-flex">
 
             <div class="app-container">
                 <div class="app-content">
@@ -99,7 +99,7 @@
         </div>
         @endif
         --}}
-        <div class="nk-app-root         fffffffffffff">
+        <div class="nk-app-root fffffffffffff">
             <!-- main @s -->
             <div class="nk-main">
                 @yield('site')
@@ -142,8 +142,8 @@
         @else
         @vite( 'resources/js/app.js')
         @endif
-        {{-- @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9']) --}}
-        {{-- @include('sweetalert::alert') --}}
+        @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
+        @include('sweetalert::alert')
         @yield('script')
     </body>
 

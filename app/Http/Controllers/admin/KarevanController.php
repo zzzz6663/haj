@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Karevan;
 use App\Models\User;
+use App\Models\Karevan;
+use App\Models\Province;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class KarevanController extends Controller
 {
@@ -14,8 +16,12 @@ class KarevanController extends Controller
      */
     public function index(Request $request)
     {
+
+        $provinces = Cache::rememberForever('provinces', function () {
+            return Province::pluck('name', 'id'); // فقط name و id رو بگیریم که سبک‌تر باشه
+        });
         $user=auth()->user();
-        $karevans = Karevan::query();
+        $karevans = Karevan::with(['logs', 'province'])->withCount('users');
         if ($request->search) {
             $search = $request->search;
             $karevans->where(function($q) use($search){
@@ -26,26 +32,10 @@ class KarevanController extends Controller
             });
         }
 
-        // $karevans->whereHas('users', function ($query)  {
-        //     $query->where('role', 'passenger'); // فقط کاربران با نقش 'passenger'
-        // });
-        // if ($request->from) {
-        //     $request->from = $karevan->convert_date($request->from);
-        //     $karevans->where('created_at', '>', $request->from);
-        // }
-        // if ($request->to) {
-        //     $request->to = $karevan->convert_date($request->to);
-        //     $karevans->where('created_at', '<', $request->to);
-        // }
 
-        // $karevans->where('role',  "passenger");
-        // if ($request->role) {
-        //     $karevans->where('role',  $request->role);
-        // }
-
-        $karevans = $karevans->sortable()
+        $karevans = $karevans
             // ->whereRole("customer")
-            ->latest()->paginate(100);
+            ->latest()->paginate(20);
 
             $docors=User::whereRole("doctor")->get();
         return view('admin.karevan.all', compact(['karevans',"user","docors"]));

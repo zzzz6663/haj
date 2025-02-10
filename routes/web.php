@@ -40,6 +40,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/check_login', [AdminController::class, "check_login"])->name('check.login');
 });
 Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/go_panel/{user}', [AdminController::class, "go_panel"])->name('go.panel')->middleware(["role:admin"]);;
     Route::post('/get_karevan/{province}', [AdminController::class, "get_karevan"]);
     Route::any('/reports', [PassengerController::class, "reports"])->name('reports')->middleware(["role:admin|manager|doctor|provincialSupervisor|provincialAgent"]);
     Route::any('/history_user/{user}', [PassengerController::class, "history_user"])->name('history.user')->middleware(["role:admin|manager|doctor|provincialSupervisor|provincialAgent"]);
@@ -64,6 +65,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, "dashboard"])->name('dashboard.admin');
     Route::any('/imports', [AdminController::class, "imports"])->name('imports');
     Route::any('/profile', [AdminController::class, "profile"])->name('profile');
+    Route::any('/rule', [AdminController::class, "rule"])->name('rule');
     Route::post('/change_doctor/{karevan}', [AdminController::class, "change_doctor"])->name('change.doctor');
     Route::post('/change_password', [AdminController::class, "change_password"])->name('change.password');
     Route::post('/change_karevan/{user}', [AdminController::class, "change_karevan"])->name('change.karevan');

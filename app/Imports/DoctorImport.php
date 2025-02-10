@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\City;
+use App\Models\Drug;
 use App\Models\User;
 use App\Models\Province;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -32,45 +33,51 @@ class DoctorImport implements ToModel, WithStartRow
         //     return ;
         // }
 
+        // $province=null;
+        // $pro=Province::whereName($row["3"])->first();
+        // if($pro){
+        //     $province=$pro->id;
+
+        // }
+        // 'brand_en',
+        // 'brand_fa',
+        // 'name',
+        // 'generic',
+
         $data = [
             "name" => $row["0"],
-            "family" => $row["1"],
-            "ssn" => $row["2"],
-            "NezamCode" => $row["3"],
-            "expert" => $row["4"],
-            "Sex" => $row["5"],
-            "serialno" => $row["6"],
-            "fathername" => $row["7"],
-            "province_id" => $row["8"],
-            "mobile" => $row["9"],
+            "brand_fa" => null,
+            "brand_en" => null,
+            "generic" =>  $row["3"],
+
         ];
+        Drug::firstOrCreate(['name' => $row["0"]], $data);
 
-
-        // $data = [
-        //     "name" => $row["0"],
-        //     "family" => $row["1"],
-        //     "mobile" => $row["2"],
-        //     "username" => $row["3"],
-        //     "password" => $row["4"],
-        //     "province_id" => $row["8"],
-        // ];
-
-
-
-
-        $data['role'] = "doctor";
-        $data['active'] = "1";
-        $data['username'] =$row["2"];
-        $data['password'] =$row["2"];
+        // // $data = [
+        // //     "name" => $row["0"],
+        // //     "family" => $row["1"],
+        // //     "mobile" => $row["2"],
+        // //     "username" => $row["3"],
+        // //     "password" => $row["4"],
+        // //     "province_id" => $row["8"],
+        // // ];
 
 
 
-        // با استفاده از firstOrCreate، اگر کاربری با این ایمیل وجود نداشته باشد، ایجاد می‌شود.
-        $exis=User::where('mobile', $row['9'])->count();
-        if(!$exis){
-            $exis = User::create($data);
-            $exis->assignRole('doctor');
-        }
+
+        // $data['role'] = "doctor";
+        // $data['active'] = "1";
+        // $data['username'] =$data["ssn"];
+        // $data['password'] =$data["ssn"];
+
+
+
+        // // با استفاده از firstOrCreate، اگر کاربری با این ایمیل وجود نداشته باشد، ایجاد می‌شود.
+        // $exis=User::where('mobile', $data["ssn"])->first();
+        // if(!$exis){
+        //     $exis = User::create($data);
+        //     $exis->assignRole('doctor');
+        // }
 
         alert()->success('پزشکان  با موفقیت اضافه شدن    ');
         return;

@@ -5,9 +5,8 @@
 <div class="p-5 m-auto content-page">
     <div class="mx-auto nk-block-head nk-block-head-lg">
         <div class="text-center nk-block-head-content">
-            <h1 class="nk-block-title fw-normal">
-
-                سامانه جامع مرکز پزشکی حج و زیارت جمعیت هلال‌احمر            </h1>
+            {{-- <h1 class="nk-block-title fw-normal">
+                سامانه جامع مرکز پزشکی حج و زیارت جمعیت هلال‌احمر            </h1> --}}
         </div>
     </div>
     <!-- .nk-block-head -->

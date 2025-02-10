@@ -113,7 +113,7 @@ class PassengerController extends Controller
 
 
         if ($request->pdf) {
-            $users = $users->orderBy('id', 'DESC')->latest()->paginate(100);
+            $users = $users->orderBy('id', 'DESC')->latest()->paginate(50);
             $pdf = PDF::loadView('admin.passenger.pdf_passenger', compact(['users']));
             return $pdf->download('pdf_passenger.pdf');
         }
@@ -126,60 +126,60 @@ class PassengerController extends Controller
         // dd($users->toSql());
         $users = $users->sortable()
             // ->whereRole("customer")
-            ->latest()->paginate(100);
-        $statusArray = $keys = array_keys(__("status"));
-        $all_status = $keys = (__("status"));
-        $all_count = User::where('role', 'passenger')->count();
+            ->latest()->paginate(50);
+        // $statusArray = $keys = array_keys(__("status"));
+        // $all_status = $keys = (__("status"));
+        // $all_count = User::where('role', 'passenger')->count();
 
-        $provinces_log = Province::with(['Karevans' => function ($query) use ($statusArray) {
-            $query->whereHas('users', function ($query) use ($statusArray) {
-                $query->where('role', 'passenger'); // فقط کاربران با نقش 'passenger'
-            });
-        }])->get()->map(function ($province) use ($all_count, $statusArray) {
-            // dd($province);
-            // یک آرایه برای ذخیره درصد کاربران فعال به تفکیک وضعیت‌ها
-            $statusPercentages = [];
+        // $provinces_log = Province::with(['Karevans' => function ($query) use ($statusArray) {
+        //     $query->whereHas('users', function ($query) use ($statusArray) {
+        //         $query->where('role', 'passenger'); // فقط کاربران با نقش 'passenger'
+        //     });
+        // }])->get()->map(function ($province) use ($all_count, $statusArray) {
+        //     // dd($province);
+        //     // یک آرایه برای ذخیره درصد کاربران فعال به تفکیک وضعیت‌ها
+        //     $statusPercentages = [];
 
-            foreach ($statusArray as $status) {
-                $activeUsersCount = $province->Karevans->reduce(function ($carry, $karevan) use ($status) {
-                    // dd($karevan->users);
-                    return $carry + $karevan->users()
-                        ->where('role', 'passenger') // فقط کاربران با نقش 'passenger'
-                        ->where('status', $status) // فقط کاربران با وضعیت خاص
-                        ->count();
-                }, 0);
+        //     foreach ($statusArray as $status) {
+        //         $activeUsersCount = $province->Karevans->reduce(function ($carry, $karevan) use ($status) {
+        //             // dd($karevan->users);
+        //             return $carry + $karevan->users()
+        //                 ->where('role', 'passenger') // فقط کاربران با نقش 'passenger'
+        //                 ->where('status', $status) // فقط کاربران با وضعیت خاص
+        //                 ->count();
+        //         }, 0);
 
-                $percentage = $all_count > 0 ? ($activeUsersCount / $all_count) * 100 : 0;
+        //         $percentage = $all_count > 0 ? ($activeUsersCount / $all_count) * 100 : 0;
 
-                // ذخیره درصد وضعیت خاص
-                $statusPercentages[$status] = round($percentage, 2);
-            }
+        //         // ذخیره درصد وضعیت خاص
+        //         $statusPercentages[$status] = round($percentage, 2);
+        //     }
 
-            return [
-                'province_name' => $province->name,
-                'status_percentages' => $statusPercentages
-            ];
-        });
-        // استخراج نتایج به صورت آرایه
-        $provinces_list = $provinces_log->pluck('province_name')->toArray();
-        $un_review = [];
-        $medical_commission = [];
-        $under_review = [];
-        $rejected = [];
-        $approved = [];
-        $result_commission = [];
-        foreach ($provinces_log as $value) {
-            $st["un_review"][] = $value['status_percentages']['un_review'] ?? 0;
-            $st["medical_commission"][] = $value['status_percentages']['medical_commission'] ?? 0;
-            $st["under_review"][] = $value['status_percentages']['under_review'] ?? 0;
-            $st["rejected"][] = $value['status_percentages']['rejected'] ?? 0;
-            $st["approved"][] = $value['status_percentages']['approved'] ?? 0;
-            $st["result_commission"][] = $value['status_percentages']['result_commission'] ?? 0;
-        }
+        //     return [
+        //         'province_name' => $province->name,
+        //         'status_percentages' => $statusPercentages
+        //     ];
+        // });
+        // // استخراج نتایج به صورت آرایه
+        // $provinces_list = $provinces_log->pluck('province_name')->toArray();
+        // $un_review = [];
+        // $medical_commission = [];
+        // $under_review = [];
+        // $rejected = [];
+        // $approved = [];
+        // $result_commission = [];
+        // foreach ($provinces_log as $value) {
+        //     $st["un_review"][] = $value['status_percentages']['un_review'] ?? 0;
+        //     $st["medical_commission"][] = $value['status_percentages']['medical_commission'] ?? 0;
+        //     $st["under_review"][] = $value['status_percentages']['under_review'] ?? 0;
+        //     $st["rejected"][] = $value['status_percentages']['rejected'] ?? 0;
+        //     $st["approved"][] = $value['status_percentages']['approved'] ?? 0;
+        //     $st["result_commission"][] = $value['status_percentages']['result_commission'] ?? 0;
+        // }
 
 
 
-        return view('admin.passenger.all', compact(['users', "user", "provinces_list", "st", "all_status"]));
+        return view('admin.passenger.all', compact(['users', "user"]));
     }
 
     /**
@@ -361,10 +361,22 @@ class PassengerController extends Controller
     public function exam_user(Request $request, User $user)
     {
         $current = auth()->user();
+
+
+        if ($current->role == "doctor" && !$current->rule) {
+            toast()->warning(" لطفا ابتدا قوانین مجموعه را مطالعه کنید  ");
+            return redirect()->route("rule");
+        }
+
+
+
         if ($current->role == "doctor" && $current->password == $current->ssn) {
             toast()->warning(" لطفا نسبت به تغییر رمز عبور اقدام فرمایید  ");
             return redirect()->route("profile");
         }
+
+
+
         $attrs = Attr::where('user_id', $user->id)->pluck('value', 'name')->toArray();
         $commission = null;
         if ($user->karevan) {
@@ -373,10 +385,10 @@ class PassengerController extends Controller
         if ($current->role == "provincialAgent") {
             $commission =   Commission::where('province_id', $current->province_id)->first();
         }
-        if (! $commission) {
-            toast()->warning(" لطفا نسبت به تعیین کمیسیون  اقدام فرمایید  ");
-            return back();
-        }
+        // if (! $commission) {
+        //     toast()->warning(" لطفا نسبت به تعیین کمیسیون  اقدام فرمایید  ");
+        //     return back();
+        // }
         // $commission = Commission::find(1);
         $drugs = Cache::get('posts', function () {
             return Drug::all();
@@ -486,7 +498,7 @@ class PassengerController extends Controller
         }
         if($user->status=="un_review"){
             $user->update([
-                'status'=>""
+                'status'=>"under_review"
             ]);
 
         }
@@ -537,8 +549,6 @@ class PassengerController extends Controller
                         $q->whereIn("karevanID", $user->karevans()->pluck("IDS")->toArray());
                     });
                 }
-
-
                 $users->where('role',  "passenger");
                 if ($request->search) {
                     $search = $request->search;
@@ -654,7 +664,7 @@ class PassengerController extends Controller
                 }
 
                 if ($request->pdf) {
-                    $users = $users->orderBy('id', 'DESC')->latest()->paginate(100);
+                    $users = $users->orderBy('id', 'DESC')->latest()->paginate(50);
                     $pdf = PDF::loadView('admin.passenger.pdf_passenger', compact(['users']));
                     return $pdf->download('pdf_passenger.pdf');
                 }
@@ -664,7 +674,8 @@ class PassengerController extends Controller
                 }
                 // dump($users->clone()->tosql());
                 $users = $users->sortable()
-                    ->latest()->paginate(100);
+                    ->latest()->paginate(50);
+
 
                 return view('admin.passenger.reports', compact(['users', "user"]));
 
@@ -741,6 +752,8 @@ class PassengerController extends Controller
                         'statusPercentages_count' => $statusPercentages_count
                     ];
                 });
+                dd(2);
+
                 // استخراج نتایج به صورت آرایه
                 $provinces_list = $provinces_log->pluck('province_name')->toArray();
                 $un_review = [];
@@ -764,8 +777,30 @@ class PassengerController extends Controller
                     $st_count["approved"][] = $value['statusPercentages_count']['approved'] ?? 0;
                     $st_count["result_commission"][] = $value['statusPercentages_count']['result_commission'] ?? 0;
                 }
+
+
+
+
+
+
+
+
+
+
+
+
                 return view('admin.passenger.reports', compact(['provinces_list', "user", "st", "all_status", "province_selected", "karevan_selected", "allusers", "st_count"]));
                 break;
+
+
+
+
+
+
+
+
+
+
 
 
                 case 't3':

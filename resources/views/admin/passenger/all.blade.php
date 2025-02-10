@@ -57,18 +57,18 @@
         <div class="card-inner-group">
             <div class="card-inner position-relative card-tools-toggle">
                 @include("main.error")
-                <form action="{{ route('passenger.index') }}" method="get" autocomplete="off">
+                <form action="{{ route('passenger.index') }}" id="s_en" method="get" autocomplete="off">
                     @csrf
                     @method('get')
                     <div class="">
                         <div class="card-tools align-items-center justify-content-between ">
-                            <div class="form-inline  gx-3">
+                            <div class="form-inline gx-3">
 
                                 <div class="form-wrap w-250px">
 
 
                                     <label class="form-label" for="select_passenger">زائر </label>
-                                    <select class=" form-control select2 " name="passenger_id" id="select_passenger">
+                                    <select class=" form-control select2" name="passenger_id" id="select_passenger">
                                         <option value="">همه موارد </option>
 
                                     </select>
@@ -170,8 +170,8 @@
 
                                 <div class="form-wrap w-250px">
                                     <br>
-                                    <input type="submit" name='pdf' value="Pdf" class=" inline-block">
-                                    <input type="submit" name='Excel' value="Excel" class=" inline-block">
+                                    <input type="submit" name='pdf' value="Pdf" class="inline-block ">
+                                    <input type="submit" name='Excel' value="Excel" class="inline-block ">
                                     <button class="btn btn-secondary">
                                         جستجو
                                     </button>
@@ -180,7 +180,7 @@
                                     <br>
 
                                     @if(request("_token"))
-                                    <a href="{{ route("passenger.index") }}" class="btn inline-block btn-danger"><i class="fas fa-times-circle"></i>
+                                    <a href="{{ route("passenger.index") }}" class="inline-block btn btn-danger"><i class="fas fa-times-circle"></i>
 
                                         <span style="padding-right:10px ">
                                             لغو جستجو
@@ -226,7 +226,7 @@
                     <tr>
                         <td scope="row"> {{ $loop->iteration }}</td>
                         <td>
-                            {{ $passenger->PassengerCode }}
+                            {{ $passenger->ids }}
 
                         </td>
                         <td>
@@ -237,10 +237,23 @@
                             @endif
                         </td>
                         <td>
+                            @role("admin")
+                            @if (in_array($passenger->status,['passenger',"approved"]))
                             <a href="{{ URL::signedRoute('passenger.info',$passenger->id)}}">
                                 {{ $passenger->name }}
                                 {{ $passenger->family }}
                             </a>
+                            @else
+                            {{ $passenger->name }}
+                            {{ $passenger->family }}
+                            @endif
+                            @endrole
+
+                            @role("manager|doctor|provincialSupervisor|provincialAgent")
+                            {{ $passenger->name }}
+                            {{ $passenger->family }}
+                            @endrole
+
 
                         </td>
 
@@ -346,9 +359,9 @@
                                                             @endif
 
                                                             @endif
-                                                            {{--  @foreach (__("status") as $key=>$val)
+                                                            {{-- @foreach (__("status") as $key=>$val)
                                                             <option {{$passenger->status==$key?"selected":""}} value="{{$key}}">{{$val}}</option>
-                                                            @endforeach  --}}
+                                                            @endforeach --}}
                                                         </select>
                                                     </div>
                                                 </div>

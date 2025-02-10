@@ -10,10 +10,10 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 @endphp
 <div class="row" id="exam_u">
     <div class="col-md-12 rtl_sec">
-        <div class="card mb-2">
+        <div class="mb-2 card">
             <h6 class="card-header">
                 روند معاینه زائر
-                <span class="text  text-success">
+                <span class="text text-success">
                     {{ $user->name }}
                     {{ $user->family }}
                 </span>
@@ -165,21 +165,21 @@ ${$key} = $val; // ایجاد متغیر دینامیک
         </div>
     </div>
 
-    <div class="col-md-6  ">
-        <div class="card mb-2">
-            <h6 class="card-header bg-primary  ">
-                <span class="text  text-white">
+    <div class="col-md-6 ">
+        <div class="mb-2 card">
+            <h6 class="card-header bg-primary ">
+                <span class="text-white text">
                     Paraclinical Test
                 </span>
                 <i class="ti ti-edit"></i>
             </h6>
             <div class="card-body" >
                 <form action="" class="ph_form">
-                    <div class="row mb-1">
+                    <div class="mb-1 row">
                         <div class="col-lg-4">
                             <div class="form-group w-100 ">
                                 <label class="form-label fs-4" for="Hb">
-                              <h6 class="text text-primary  ">
+                              <h6 class="text text-primary ">
                                 Hb
                               </h6>
                                 </label>
@@ -194,7 +194,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3">
                             <div class="form-group w-100">
                                 <label class="form-label fs-4" for="bun">
-                                    <h6 class="text text-primary  ">
+                                    <h6 class="text text-primary ">
                                         bun
                                     </h6>
                                 </label>
@@ -207,7 +207,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3">
                             <div class="form-group w-100">
                                 <label class="form-label fs-4" for="FBS">
-                                <h6 class="text text-primary  ">
+                                <h6 class="text text-primary ">
                                     FBS
                                 </h6>
                                 </label>
@@ -220,7 +220,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3">
                             <div class="form-group w-100">
                                 <label class="form-label fs-4" for="PLT">
-                                    <h6 class="text text-primary  ">
+                                    <h6 class="text text-primary ">
                                         PLT
                                     </h6>
                                 </label>
@@ -234,7 +234,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-4">
                             <div class="form-group w-100">
                                 <label class="form-label fs-4" for="Cr">
-                                   <h6 class="text text-primary  ">
+                                   <h6 class="text text-primary ">
                                     Cr
                                    </h6>
                                 </label>
@@ -245,10 +245,10 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 mb-2">
+                        <div class="mb-2 col-lg-3">
                             <div class="form-group w-100">
                                 <label class="form-label fs-4" for="HbA1C">
-                                   <h6 class="text text-primary  ">
+                                   <h6 class="text text-primary ">
                                     HbA1C
                                    </h6>
                                 </label>
@@ -263,7 +263,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3 ">
                             <div class="form-group w-100">
                                 <label class="form-label fs-4" for="MMSE">
-                                    <h6 class="text text-primary  ">
+                                    <h6 class="text text-primary ">
                                         MMSE
                                     </h6>
                                 </label>
@@ -290,21 +290,21 @@ ${$key} = $val; // ایجاد متغیر دینامیک
         </div>
     </div>
 
-    <div class="col-md-6    ">
-        <div class="card mb-2">
-            <h6 class="card-header bg-primary  ">
-                <span class="text  text-white">
+    <div class="col-md-6 ">
+        <div class="mb-2 card">
+            <h6 class="card-header bg-primary ">
+                <span class="text-white text">
                     Physical Examination
                 </span>
                 <i class="ti ti-edit"></i>
             </h6>
             <div class="card-body">
                 <form action="" class="ph_form">
-                    <div class="row mb-1">
+                    <div class="mb-1 row">
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-label fs-4" for="Blood_Presure_Sys">
-                                   <h6 class="text text-primary  ">
+                                   <h6 class="text text-primary ">
                                     Blood Presure(Sys)
                                    </h6>
                                 </label>
@@ -318,7 +318,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-label fs-4" for="Blood_Presure_Dis">
-                                  <h6 class="text text-primary  ">
+                                  <h6 class="text text-primary ">
                                     Blood Presure(Dis)
                                   </h6>
                                 </label>
@@ -331,11 +331,11 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         </div>
                     </div>
 
-                    <div class="row mb-2">
+                    <div class="mb-2 row">
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-label fs-4" for="Height">
-                                 <h6 class="text text-primary  ">
+                                 <h6 class="text text-primary ">
                                     Height(CM)
                                  </h6>
                                 </label>
@@ -349,7 +349,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-label fs-4" for="Weight">
-                                    <h6 class="text text-primary  ">
+                                    <h6 class="text text-primary ">
                                         Weight(Kg)
                                     </h6>
                                 </label>
@@ -365,7 +365,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-label fs-4" for="s">
-                                   <h6 class="text text-primary  ">
+                                   <h6 class="text text-primary ">
                                     BMI
                                    </h6>
                                 </label>
@@ -379,7 +379,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="form-label fs-4" for="PulseRate">
-                                   <h6 class="text text-primary  ">
+                                   <h6 class="text text-primary ">
                                     Pulse Rate
                                    </h6>
                                 </label>
@@ -404,9 +404,9 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
     <div class="col-md-12 pari_s radio_sec" id="para_c_test">
-        <div class="card mb-2">
-            <h6 class="card-header bg-warning  ">
-                <span class="text  text-white">
+        <div class="mb-2 card">
+            <h6 class="card-header bg-warning ">
+                <span class="text-white text">
                     Paracinical Test - Continue
                 </span>
                 <i class="ti ti-edit"></i>
@@ -414,7 +414,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
             <div class="card-body">
                 <form action="" class="ph_form">
                     <div class="row ">
-                        <div class="col-lg-4 mb-2">
+                        <div class="mb-2 col-lg-4">
                             <div class="form-group">
                                 <h6 class="text text-warning">
                                     EKG
@@ -431,7 +431,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                                     </li>
                                     <li>
                                         <div class="custom-control custom-control-sm custom-radio custom-control-pro">
-                                            <input type="radio"  class="custom-control-input  requis req " name="EKG"
+                                            <input type="radio"  class="custom-control-input requis req " name="EKG"
                                                 {{(isset($EKG)&&$EKG=="Abnormal" )?"checked":""}} id="EKG2"
                                                 value="Abnormal">
                                             <label class="custom-control-label" for="EKG2">
@@ -441,7 +441,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                                     <li>
                                         <div
                                             class="custom-control custom-control-sm custom-radio custom-control-pro checked">
-                                            <input type="radio"   class="custom-control-input  requis req" name="EKG"
+                                            <input type="radio"   class="custom-control-input requis req" name="EKG"
                                                 {{(isset($EKG)&&$EKG=="Didnot_do_it" )?"checked":""}} id="EKG3"
                                                 value="Didnot_do_it">
                                             <label class="custom-control-label" for="EKG3">
@@ -456,7 +456,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                                                         id="customFile" accept="image/*">
                                                     <label class="form-file-label" for="customFile">انتخاب فایل</label>
                                                 </div>
-                                                <div class="mr-2 pr-2">
+                                                <div class="pr-2 mr-2">
                                                     <a href="{{ $user->attr_attach($attach_EKG) }}"
                                                         data-lightbox="gallery-{{ $user->id }}" class="">
                                                         تصویر
@@ -471,7 +471,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                             </div>
                         </div>
                         @if ($user->Sex==2 && $user->BirthDate()<50)
-                         <div class="col-lg-4 mb-2">
+                         <div class="mb-2 col-lg-4">
                             <div class="form-group">
                                 <h6 class="text text-warning">
                                     PregnencyTest
@@ -513,7 +513,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     @endif
 
 
-                    <div class="col-lg-4 mb-2">
+                    <div class="mb-2 col-lg-4">
                         <div class="form-group">
                             <h6 class="text text-warning">
                                 Opium Test
@@ -555,7 +555,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 
-                    <div class="col-lg-4 mb-2">
+                    <div class="mb-2 col-lg-4">
                         <div class="form-group">
                             <h6 class="text text-warning">
                                 CXR
@@ -595,7 +595,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 
-                    <div class="col-lg-4 mb-2">
+                    <div class="mb-2 col-lg-4">
                         <div class="form-group">
                             <h6 class="text text-warning">
                                 HBS-Ag
@@ -672,7 +672,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         </div>
                     </div>
 
-                    <div class="col-lg-4 mb-2">
+                    <div class="mb-2 col-lg-4">
                         <div class="form-group">
                             <h6 class="text text-warning">
                                 Occult Blood
@@ -726,9 +726,9 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 <div class="col-md-12 pari_s" id="checl_boxy">
-    <div class="card mb-2">
+    <div class="mb-2 card">
         <h6 class="card-header bg-danger ">
-            <span class="text  text-white">
+            <span class="text-white text">
                 Positive Medical History
             </span>
             <i class="ti ti-edit"></i>
@@ -736,12 +736,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
         <div class="card-body">
             <form action="" class="ph_form">
                 <div class="row ">
-                    <div class="col-lg-8   mb-2">
+                    <div class="mb-2 col-lg-8">
                         <div class="form-group ">
                             <h6 class="text text-danger cheky">
                                 Cardio Vascular
                             </h6>
-                            <ul class=" border border-danger p-2 mb-2   custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="CHF">
@@ -834,12 +834,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </div>
 
 
-                    <div class="col-lg-4 mb-2">
-                        <div class="form-group  ml-5 " style="   ">
+                    <div class="mb-2 col-lg-4">
+                        <div class="ml-5 form-group " style="   ">
                             <h6 class="text text-danger cheky">
                                 dermatology
                             </h6>
-                            <ul class="border border-danger p-2 mb-2  custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="Psoriasis">
@@ -908,12 +908,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </div>
 
 
-                    <div class="col-lg-4   mb-2">
+                    <div class="mb-2 col-lg-4">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Autoimmune disease
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="Graves ">
@@ -962,12 +962,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         </div>
                     </div>
 
-                    <div class="col-lg-3   mb-2">
+                    <div class="mb-2 col-lg-3">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Nerurology
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="MultipleSclerosis">
@@ -1020,13 +1020,13 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 mb-2">
+                    <div class="mb-2 col-lg-3">
 
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Hormone
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="DM">
@@ -1072,12 +1072,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2   mb-2">
+                    <div class="mb-2 col-lg-2">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Infectious
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="TB">
@@ -1092,12 +1092,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-9   mb-2">
+                    <div class="mb-2 col-lg-9">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Psychiatry
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="PTSD">
@@ -1221,12 +1221,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         </div>
                     </div>
 
-                    <div class="col-lg-4   mb-2">
+                    <div class="mb-2 col-lg-4">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Hematology&Oncology
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="Anemia">
@@ -1263,12 +1263,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         </div>
                     </div>
 
-                    <div class="col-lg-3   mb-2">
+                    <div class="mb-2 col-lg-3">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Gastroenterology
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="Hepatits">
@@ -1302,12 +1302,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
                     </div>
 
-                    <div class="col-lg-2   mb-2">
+                    <div class="mb-2 col-lg-2">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Musculoskeletal
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="PhysicalDisability">
@@ -1335,13 +1335,13 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </div>
 
 
-                    <div class="col-lg-3   mb-2">
+                    <div class="mb-2 col-lg-3">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 pulmonary
                             </h6>
 
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="COPD">
@@ -1365,12 +1365,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </div>
 
 
-                    <div class="col-lg-3 mb-2">
+                    <div class="mb-2 col-lg-3">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 Other
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="SurgeryBackground">
@@ -1384,12 +1384,12 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-9   mb-2">
+                    <div class="mb-2 col-lg-9">
                         <div class="form-group">
                             <h6 class="text text-danger cheky">
                                 UROLOGY/Nephrology
                             </h6>
-                            <ul class="border border-danger p-2 mb-2 custom-control-group">
+                            <ul class="p-2 mb-2 border border-danger custom-control-group">
                                 <li>
                                     <div class="custom-control custom-checkbox custom-control-pro no-control checked">
                                         <input type="text" hidden value="0" name="DIALYSIS">
@@ -1455,7 +1455,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                                                 <label class="form-file-label" for="DialysisFile">انتخاب
                                                     فایل</label>
                                             </div>
-                                            <div class="mr-2 pr-2">
+                                            <div class="pr-2 mr-2">
                                                 <a href="{{ $user->attr_attach($DialysisFile) }}"
                                                     data-lightbox="gallery-33" class="">
                                                     تصویر
@@ -1558,9 +1558,9 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 <div class="col-md-12 pari_s">
-    <div class="card mb-2">
-        <h6 class="card-header bg-secondary  ">
-            <span class="text  text-white">
+    <div class="mb-2 card">
+        <h6 class="card-header bg-secondary ">
+            <span class="text-white text">
                 Other Info
 
             </span>
@@ -1571,7 +1571,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
                 <div class="row ">
-                    <div class="col-lg-9 mb-2">
+                    <div class="mb-2 col-lg-9">
                         <div class="form-group">
 
                             <ul class="custom-control-group">
@@ -1721,9 +1721,9 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 <div class="col-md-12">
-    <div class="card mb-2">
-        <h6 class="card-header  bg-gray ">
-            <span class="text  text-dark">
+    <div class="mb-2 card">
+        <h6 class="card-header bg-gray ">
+            <span class="text text-dark">
                 Other files (include Consultant Physician files)
 
             </span>
@@ -1731,13 +1731,13 @@ ${$key} = $val; // ایجاد متغیر دینامیک
         </h6>
 
         <div class="card-body">
-            <p class="alewarning  rt alert-warning">
+            <p class="alewarning rt alert-warning">
                 پسوند های قابل قبول :jpg , png , pdf
                 حجم فایل بیشتر از 5 مگابایت نباشد
             </p>
             <form action="" class="ph_form">
                 <div class="row">
-                    <div class="col-lg-6  mb-3">
+                    <div class="mb-3 col-lg-6">
                         <div class="form-group">
                             <div class="form-control-wrap d-flex justify-content-between">
                                 <div class="form-file">
@@ -1828,9 +1828,9 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 <div class="col-lg-12">
-    <div class="card mb-2">
-        <h6 class="card-header bg-success  ">
-            <span class="text  text-white">
+    <div class="mb-2 card">
+        <h6 class="card-header bg-success ">
+            <span class="text-white text">
                 اطلاعات دارویی
                 {{ $user->name }}
                 {{ $user->family }}
@@ -1842,7 +1842,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                 <div class="col-lg-7">
                     <div class="mb-1">
                         <label class="form-label" for="mobile">انتخاب دارو </label>
-                        <select class=" form-control select2 " name="" id="select_drug" required>
+                        <select class=" form-control select2" name="" id="select_drug" required>
                             <option value="">انتخاب کنید </option>
                             {{-- @foreach ($drugs as $dug )
                             <option value="{{$drug->id}}">
@@ -1871,7 +1871,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                 @role('admin|doctor')
                 @if($user->status=="un_review"||$user->status=="under_review")
                 <div class="col-lg-2">
-                    <div class="mb-1 mt-4">
+                    <div class="mt-4 mb-1">
                         <span class="btn btn-success add_drug" data-id="{{ $user->id }}">اضافه کن </span>
                     </div>
                 </div>
@@ -1891,16 +1891,16 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 <div class="col-md-12 pari_s">
-    <div class="card mb-2">
-        <h6 class="card-header  bg-light ">
-            <span class="text  text-dark">
+    <div class="mb-2 card">
+        <h6 class="card-header bg-light ">
+            <span class="text text-dark">
                 Diet Food
             </span>
             <i class="ti ti-edit"></i>
         </h6>
         <div class="card-body">
             <form action="" class="ph_form">
-                <div class="row mb-2">
+                <div class="mb-2 row">
                     <ul class="custom-control-group">
                         <li>
                             <div class="custom-control custom-control-sm custom-checkbox custom-control-pro">
@@ -1978,10 +1978,10 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 @role("admin|manager|doctor|provincialSupervisor")
 @if($user->status=="under_review" ||$user->status=="un_review" ||$user->status=="result_commission")
 <div class="col-md-12">
-    <div class="card mb-2">
-        <h6 class="card-header bg-info text-white">
+    <div class="mb-2 card">
+        <h6 class="text-white card-header bg-info">
             وضعیت
-            <span class="text  text-dark">
+            <span class="text text-dark">
                 {{ $user->name }}
                 {{ $user->family }}
             </span>
@@ -1999,7 +1999,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
                         <div class="mb-1">
                             <label for="vip">وضعیت </label>
-                            <select class=" form-control select2 " name="status" id="status">
+                            <select class=" form-control select2" name="status" id="status">
                                 <option value="">انتخاب کنید </option>
                                 <option value="rejected">عدم تایید </option>
                                 <option value="approved">تایید </option>
@@ -2008,7 +2008,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         @else
                         <div class="mb-1">
                             <label for="vip">وضعیت </label>
-                            <select class=" form-control select2 " name="status" id="status">
+                            <select class=" form-control select2" name="status" id="status">
                                 <option value="">انتخاب کنید </option>
                                 @foreach (__("status") as $key=>$val)
                                 @if($key=="un_review"|| $key=="result_commission")
@@ -2103,7 +2103,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
                     <div class="col-lg-2">
-                        <div class="mb-1 mt-4">
+                        <div class="mt-4 mb-1">
                             @role("admin|manager|doctor")
                             <span class="btn btn-info update_psssenger_status " data-id="{{$user->id}}">
                                 ذخیره
@@ -2127,10 +2127,10 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <div class="col-md-12">
-    <div class="card mb-2">
-        <h6 class="card-header bg-warning text-white">
+    <div class="mb-2 card">
+        <h6 class="text-white card-header bg-warning">
             اطلاعات کمیسیون
-            <span class="text  text-dark">
+            <span class="text text-dark">
                 {{ $user->name }}
                 {{ $user->family }}
             </span>
@@ -2150,7 +2150,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                             {{$user->doctor_info}}
                         </p>
                     </div>
-                    <div class="col-lg-6 mb-5">
+                    <div class="mb-5 col-lg-6">
                        <div style="text-align: left;">
                         <h5 >
                             علت
@@ -2162,7 +2162,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                        </div>
                     </div>
                     <div class="col-lg-2">
-                        <div class="mb-1 mt-4">
+                        <div class="mt-4 mb-1">
 
                             <span id="get_pdf2" style="display: " class="btn btn-danger">
                                 دانلود فرم کمیسیون
@@ -2246,16 +2246,16 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 <div class="col-lg-12">
 
     <div class="row" id="fom_p1" style="display: ">
-        <div class="col-lg-4 mb-2">
+        <div class="mb-2 col-lg-4">
             <img class="mt-5" src="{{asset(" images/lg.png")}}" alt="">
         </div>
-        <div class="col-lg-4 mb-2 mt-5">
+        <div class="mt-5 mb-2 col-lg-4">
             <h6>
                 بسمه تعالي
             </h6>
 
         </div>
-        <div class="col-lg-4 mb-2">
+        <div class="mb-2 col-lg-4">
             <div class="mt-5">
                 <span class="ti">
                     تاریخ:
@@ -2278,7 +2278,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
             </div>
 
         </div>
-        <div class="col-lg-12 mb-2">
+        <div class="mb-2 col-lg-12">
             <h6>
                 فرم ارجاع متقاضيان حج به كميسيون مشورتي استان
 
@@ -2286,7 +2286,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
         </div>
         <div class="col-lg-10">
             <div class="row mrf">
-                <div class="col-lg-9 mb-2">
+                <div class="mb-2 col-lg-9">
                     <span class="ti">
                         مشخصات متقاضی:
                     </span>
@@ -2295,7 +2295,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                         {{$user->family}}
                     </span>
                 </div>
-                <div class="col-lg-3 mb-2">
+                <div class="mb-2 col-lg-3">
                     <span class="ti">
                         نام پدر:
                     </span>
@@ -2304,7 +2304,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
                     </span>
                 </div>
-                <div class="col-lg-4 mb-2">
+                <div class="mb-2 col-lg-4">
                     <span class="ti">
                         تاریخ تولد:
                     </span>
@@ -2313,7 +2313,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </span>
 
                 </div>
-                <div class="col-lg-4 mb-2">
+                <div class="mb-2 col-lg-4">
                     <span class="ti">
                         کد ملی:
                     </span>
@@ -2322,7 +2322,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </span>
 
                 </div>
-                <div class="col-lg-4 mb-2">
+                <div class="mb-2 col-lg-4">
                     <span class="ti">
                         شماره زائر :
                     </span>
@@ -2331,7 +2331,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </span>
 
                 </div>
-                <div class="col-lg-4 mb-2">
+                <div class="mb-2 col-lg-4">
                     <span class="ti">
                         شماره کاروان:
                     </span>
@@ -2340,7 +2340,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </span>
 
                 </div>
-                <div class="col-lg-4 mb-2">
+                <div class="mb-2 col-lg-4">
                     <span class="ti">
                         مدیر کاروان:
                     </span>
@@ -2353,7 +2353,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                     </span>
 
                 </div>
-                <div class="col-lg-4 mb-5">
+                <div class="mb-5 col-lg-4">
                     <span class="ti">
                         نام پزشک:
                     </span>
@@ -2380,13 +2380,13 @@ ${$key} = $val; // ایجاد متغیر دینامیک
                 <br>
             </div>
         </div>
-        <div class="col-lg-12 mb-2 mrf">
+        <div class="mb-2 col-lg-12 mrf">
             <h6>
                 نظرات پزشک حج تمتع
 
             </h6>
         </div>
-        <div class="col-lg-12  mb-2 mrf">
+        <div class="mb-2 col-lg-12 mrf">
             <h6 >
                 علت كلي ارجاع به كميسيون
             </h6>
@@ -2403,7 +2403,7 @@ ${$key} = $val; // ایجاد متغیر دینامیک
         <br>
         <br>
 
-        <div class="col-lg-12  mrl mb-2 ">
+        <div class="mb-2 col-lg-12 mrl ">
             <h6>
                  پزشک  :
 
@@ -2512,6 +2512,9 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
         <br>
         <br>
+        @if($commission)
+
+
         <div class="col-lg-12">
 
             <table class="table">
@@ -2560,11 +2563,13 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
         </div>
         <div class="col-lg-12"></div>
-        <div class="col-lg-12 mb-2  mb-2 mrl">
+        <div class="mb-2 col-lg-12 mrl">
             <h6>
                 فرم ارجاع متقاضيان حج به كميسيون مشورتي استان
             </h6>
         </div>
+        @endif
+
     </div>
 
 </div>
@@ -2582,11 +2587,11 @@ ${$key} = $val; // ایجاد متغیر دینامیک
 
 
 <div class="col-md-12">
-    <div class="card mb-2">
-        <h6 class="card-header bg-info text-white">
+    <div class="mb-2 card">
+        <h6 class="text-white card-header bg-info">
             وضعیت
             نهایی
-            <span class="text  text-dark">
+            <span class="text text-dark">
                 {{ $user->name }}
                 {{ $user->family }}
             </span>

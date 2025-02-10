@@ -64,7 +64,7 @@
                 <div class="card-inner position-relative card-tools-toggle">
                     <div class="">
                         <div class="card-tools align-items-center justify-content-between ">
-                            <div class="form-inline  gx-3">
+                            <div class="form-inline gx-3">
                                 <div class="form-wrap w-150px">
                                     <label for="search">جستجو</label>
                                     <input type="text" name="search" value="{{ request("search") }}"
@@ -93,14 +93,14 @@
                                     <span class="">
                                         <br>
                                         @if(request("_token"))
-                                        <a href="{{ route("karevan.index") }}" class="btn inline-block btn-danger"><i
+                                        <a href="{{ route("karevan.index") }}" class="inline-block btn btn-danger"><i
                                                 class="fas fa-times-circle"></i>
 
                                                 <span style="padding-right:10px ">
                                                     لغو جستجو
                                                 </span></a>
                                         @endif
-                                        <button class="btn btn-dim btn-outline-light inline-block">
+                                        <button class="inline-block btn btn-dim btn-outline-light">
                                             اعمال
                                         </button>
                                     </span>
@@ -142,7 +142,7 @@
                                     {{ $karevan->ManagerFamily }}
                                 </td>
                                 <td>
-                                    {{ $karevan->IDS }}
+                                    {{ $karevan->KarevanNo }}
                                 </td>
                                 <td>
                                     {{ $karevan->Tel }}
@@ -164,7 +164,7 @@
                                     {{ $karevan->AvamelNo }}
                                 </td>
                                 <td>
-                                    {{ $karevan->users()->count() }}
+                                    {{ $karevan->users_count  }}
 
                                 </td>
                                 <td>
@@ -200,10 +200,10 @@
                                         <span class="btn btn-info cha">تغییر پزشک </span>
                                         <div class="par_sel" style="display: none">
 
-                                        <div class=" ">
+                                        <div class="">
                                             <div class="selec d-flex">
                                                 <label for="vip">انتحاب پزشک </label>
-                                                <select class=" form-control select2 change_doctor " m data-id="{{ $karevan->id}}" name="">
+                                                <select class=" form-control select2 change_doctor" m data-id="{{ $karevan->id}}" name="">
                                                     <option value="">انتخاب کنید </option>
                                                     @foreach ($docors as $doctor )
                                                     <option {{ $karevan->doctor_id==$doctor->id?"selected":""}}
@@ -242,7 +242,7 @@
                                                         <div class="col-lg-9">
                                                             <div class="form-wrap px">
                                                                 <label for="vip">انتحاب پزشک </label>
-                                                                <select class=" form-control select2  sel"
+                                                                <select class=" form-control select2 sel"
                                                                     name="status">
                                                                     <option value="">انتخاب کنید </option>
                                                                     @foreach ($docors as $doctor )
@@ -276,9 +276,10 @@
 
                         </tbody>
                     </table>
-                    <div>
-
+                    <div class="card-inner">
+                        {{ $karevans->appends(Request::all())->links('admin.section.pagination') }}
                     </div>
+
                 </div>
 
 
@@ -293,8 +294,5 @@
 
 </div>
 <!-- .card-inner -->
-<div class="card-inner">
-    {{ $karevans->appends(Request::all())->links('admin.section.pagination') }}
-</div>
 
 @endsection

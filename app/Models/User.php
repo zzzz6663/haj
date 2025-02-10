@@ -91,12 +91,13 @@ class User extends Authenticatable
         "NezamCode",
         "mobile",
         "status",
+        "rule",//قوانین مجموعه
         "commission_reason",
         "commission_id",
         "commission_reslut",//قایل نتیجه کم$سیون
         "commission_in",//رفتن به کیمسیون
         "commission_status",//ر نظر کمیسون
-        "reset_reason",//ر   دلیل تغییر وضعیت 
+        "reset_reason",//ر   دلیل تغییر وضعیت
     ];
     public $sortable = [
         'name',

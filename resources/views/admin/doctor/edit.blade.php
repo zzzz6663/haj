@@ -3,13 +3,50 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card mb-4">
+        <div class="mb-4 card">
             <h5 class="card-header">ویرایش پزشک
 
               {{$user->name}}
               {{$user->family}}
                 <i class="ti ti-user-plus"></i>
             </h5>
+            <div class="mb-4 card">
+                @role("admin|manager")
+                <div class="form-wrap px">
+                    <span class="btn btn-info cha">تغییر کاروان </span>
+                    <div class="par_sel" style="display: none">
+
+                        <div class="" style="width:300px">
+                            <div class="selec pare_k d-flex">
+                                <label for="vip">انتحاب کاروان </label>
+                                <select class=" form-control select2" multiple name="">
+                                    <option value="">انتخاب کنید </option>
+                                    @foreach ($karevans as $karevan )
+
+                                    <option {{ $karevan->doctor_id==$user->id?"selected":""}} value="{{$karevan->id}}">
+                                        {{$karevan->KarevanNo}}
+                                        @if( $karevan->province)
+                                        {{$karevan->province->name}}-
+                                        @endif
+                                    </option>
+                                    @endforeach
+                                    @foreach ($user->karevans as $kar )
+                                    <option selected value="{{$kar->id}}">
+                                        {{$kar->KarevanNo}}
+                                        @if( $kar->province)
+                                        {{$kar->province->name}}-
+                                        @endif
+                                    </option>
+                                    @endforeach
+                                </select>
+                                <span class="btn btn-success change_karevan" data-id="{{ $user->id}}">ذخیره </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                @endrole
+            </div>
             <div class="card-body">
                 @include('master.error')
                 <form action="{{ route("doctor.update",$user->id) }}" method="post" enctype="multipart/form-data">

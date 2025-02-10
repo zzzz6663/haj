@@ -37,9 +37,9 @@ class DoctorController extends Controller
         $users->where('role',  "doctor");
         $users = $users->sortable()
             // ->whereRole("customer")
-            ->latest()->paginate(100);
-            $karevans=Karevan::where('doctor_id', null)->get();;
-        return view('admin.doctor.all', compact(['users',"user","karevans"]));
+            ->latest()->paginate(50);
+
+        return view('admin.doctor.all', compact(['users',"user" ]));
     }
 
     /**
@@ -98,7 +98,8 @@ class DoctorController extends Controller
     public function edit(User $doctor, Request $request)
     {
         $user=$doctor;
-        return view('admin.doctor.edit', compact(["user"]));
+        $karevans=Karevan::where('doctor_id', null)->get();;
+        return view('admin.doctor.edit', compact(["user","karevans"]));
     }
 
     /**

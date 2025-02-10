@@ -335,7 +335,16 @@ if (window.jQuery) {
             $(this).val(null).trigger("change"); // مقدار انتخاب نشده است
         }
     });
+if( $("#select_passenger").length){
+    console.log("سسسس شد!");
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            console.log("کلید Enter زده شد!");
+            $('#s_en').submit()
+        }
+    });
 
+}
     $("#select_drug").select2({
         placeholder: "جستجو کنید...",
         ajax: {

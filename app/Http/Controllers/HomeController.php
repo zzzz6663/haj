@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use PDO;
 use Kavenegar;
 use Mpdf\Tag\P;
+use PDOException;
 use Carbon\Carbon;
 use App\Models\Attr;
 use App\Models\City;
@@ -53,30 +55,24 @@ class HomeController extends Controller
     }
     public function clear(Request $request)
     {
-        $user = User::find(52);
-        // // $res=$user->sms("+989373699317","salam"."https://ioban.ir/"."لغو11");
-        // // dd(   $res);
-        // $com=$user->Karevan
-        // ->province
+    //     $user = User::find(1);
+    // $user->update([
+    //     'role'=>"admin",
+    //     'username'=>"admin",
+    //     'password'=>"121212",
+    //     'active'=>"1"
+    // ]);
+    // $user->assignRole('admin');
         $user=  User::where('mobile', "09373699317")->first();
-        // dd($user->password);
-        // ->commissions;
-        // dd(  $com);
+
         Artisan::call('cache:clear');
         Artisan::call('route:cache');
-        Artisan::call('config:cache');
         Artisan::call('view:clear');
         Artisan::call('optimize:clear');
         Artisan::call('config:clear');
-        // try {
-        //     DB::connection('sqlsrv')->getPdo();
-        //     return "اتصال به SQL Server ویندوزی برقرار است! دیتابیس: " . DB::connection('sqlsrv_windows')->getDatabaseName();
-        // } catch (\Exception $e) {
-        //     return "اتصال ناموفق! خطا: " . $e->getMessage();
-        // }
 
 
-        return "12 11";
+
         return jdate()->format("Y");
 
     }
@@ -106,7 +102,6 @@ class HomeController extends Controller
                 "name" =>  "کیمسیون پزشکی  استان ".$user->province->name,
                 "province_id" => $user->province->id,
             ];
-
             $commission=Commission::where('province_id', $user->province->id)->count();
             if( !$commission){
                 $commission=Commission::create($data);

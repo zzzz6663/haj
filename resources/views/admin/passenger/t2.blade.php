@@ -6,7 +6,7 @@
         " rel="stylesheet">
 
 
-<div class="card  card-preview">
+<div class="card card-preview">
     <h3 class="nk-block-title page-title">آمار استان</h3>
 
 
@@ -21,11 +21,11 @@
                         <input type="text" value="t2" hidden name="type">
                         {{--  <div class="">
                             <div class="card-tools align-items-center justify-content-between ">
-                                <div class="form-inline  gx-3">
+                                <div class="form-inline gx-3">
                                     <div class="form-wrap w-250px">
                                         <input type="text" name="all" hidden value="1">
                                         <label for="vip">استان </label>
-                                        <select class=" form-control select2 " name="province_id" id="province">
+                                        <select class=" form-control select2" name="province_id" id="province">
                                             <option value="">همه موراد </option>
                                             @foreach (App\Models\Province::all() as $province )
                                             @if($user->role == "doctor" && !in_array($province->id,$user->karevans()->pluck("ProvinceID")->toArray()))
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="form-wrap w-250px">
                                         <label for="vip">کاروان </label>
-                                        <select class=" form-control select2 " name="karevan_id" id="karevan">
+                                        <select class=" form-control select2" name="karevan_id" id="karevan">
                                             <option value="">همه موراد  </option>
                                             @if(request("province_id"))
                                             @php
@@ -71,8 +71,7 @@
                                     <div class="form-wrap w-200px">
                                         <br>
                                         @if(request("_token"))
-                                        <a href="{{ route("reports",['type'=>"t2"]) }}" class="btn inline-block
-                                            btn-danger"><i class="fas fa-times-circle"></i>
+                                        <a href="{{ route("reports",['type'=>"t2"]) }}" class="inline-block btn btn-danger"><i class="fas fa-times-circle"></i>
                                             <span style="padding-right:10px ">
                                                 لغو جستجو
                                             </span></a>
@@ -88,10 +87,10 @@
 
         </div>
     </div>
-
+{{--
     @if(request("all"))
-    <div class="card-inner border table-responsive">
-        <div class="row mb-1 pt-1 pb-1 border-bottom">
+    <div class="border card-inner table-responsive">
+        <div class="pt-1 pb-1 mb-1 row border-bottom">
             <div class="col-lg-3">
                 <span class="titly">تاریخ:</span>
                 <span class="contenty">
@@ -132,7 +131,7 @@
             </div>
 
         </div>
-        <div class="row mb-1 pt-1 pb-1 border-bottom">
+        <div class="pt-1 pb-1 mb-1 row border-bottom">
             <div class="col-lg-3">
                 <span class="titly">تعداد کل زائرین:</span>
                 <span class="contenty">
@@ -185,7 +184,7 @@
                 </span>
             </div>
         </div>
-        <div class="row mb-1 pt-1 pb-1 border-bottom">
+        <div class="pt-1 pb-1 mb-1 row border-bottom">
             <div class="col-lg-6">
                 <span class="titly">
                     :تعداد کاروانهای دارای پزشک
@@ -213,7 +212,7 @@
                 </span>
             </div>
         </div>
-        <div class="row mb-1 pt-1 pb-1 border-bottom">
+        <div class="pt-1 pb-1 mb-1 row border-bottom">
             <div class="col-lg-3">
                 <span class="titly">
                     :تعداد زائرین تایید شده توسط پزشک
@@ -275,7 +274,7 @@
         $unapproved=
         $allusers->clone()->whereIn("status",["un_review","under_review","medical_commission","result_commission"])->count();
         @endphp
-        <div class="row mb-1 pt-1 pb-1 border-bottom">
+        <div class="pt-1 pb-1 mb-1 row border-bottom">
             <div class="col-lg-6">
                 <div id="chart4">
 
@@ -612,7 +611,7 @@
         </table>
     </div>
 
-    @endif
+    @endif --}}
 
 
 

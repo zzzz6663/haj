@@ -27,8 +27,13 @@ use Spatie\Permission\Models\Permission;
 class AdminController extends Controller
 {
 
+    public function go_panel(User $user)
+    {
+Auth::loginUsingId($user->id);
+return redirect()->route("passenger.index");
+    }
     public function get_karevan(Province $province)
-    { 
+    {
         if($province){
             return response()->json([
                 'body' => view('section.get_karevan', compact('province'))->render(),
@@ -128,11 +133,11 @@ class AdminController extends Controller
         // $user= User::create($data);
         // $user->assignRole('admin');
         // dd($data);
-
         $user = User::where("username", $request->username)->whereActive(1)->whereIn(
             'role',
             ['admin', "doctor", "provincialSupervisor", "provincialAgent", "manager"]
         )->first();
+
         //    $user->assignRole('admin');
         // dd(Hash::check($request->password, $user->password));
         if (!$user) {
@@ -248,6 +253,19 @@ class AdminController extends Controller
         return redirect()->route("passenger.index");
     }
 
+    public function rule(Request $request)
+    {
+        $user = auth()->user();
+
+        if( $request->isMethod("post")){
+            $user->update([
+                'rule'=>1
+            ]);
+            toast()->success("اطلاعات با موفقیت ثبت شد ");
+            return redirect()->route("passenger.index");
+        }
+        return view('admin.dashboard.rule', compact(["user"]));
+    }
     public function profile(Request $request)
     {
         $user = auth()->user();
@@ -294,6 +312,7 @@ class AdminController extends Controller
             $users
                 ->where(function ($q) use ($search) {
                     $q->where('name', 'LIKE', "%{$search}%")
+                        ->orWhere('ids', 'LIKE', "%{$search}%")
                         ->orWhere('family', 'LIKE', "%{$search}%")
                         ->orWhere('ssn', 'LIKE', "%{$search}%")
                         ->orWhere('karevanID', 'LIKE', "%{$search}%");

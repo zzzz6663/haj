@@ -82,7 +82,6 @@ class KarevanImport implements ToModel, WithStartRow
     $exis=Karevan::where('ids', $row['0'])->count();
     if(!$exis){
         $user = Karevan::create($data);
-
     }
         alert()->success('کاروان   با موفقیت اضافه شدن    ');
         return  ;

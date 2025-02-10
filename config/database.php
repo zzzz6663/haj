@@ -61,17 +61,37 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-'sqlsrv' => [
-    'driver' => 'sqlsrv',
+'naser' => [
+   'driver' => 'sqlsrv',
     'host' => "172.20.0.33",
-    'port' =>"1433",
+    'port' => "1433",
     'database' => "HajTam04Web",
     'username' => "keyvandb",
     'password' => "Aa112233445566",
     'charset' => 'utf8',
     'prefix' => '',
     'pooling' => false,
+    'options' => [
+        "TrustServerCertificate" => true, // این گزینه را اضافه کنید
+    ],
 ],
+
+'sqlsrv2' => [
+   'driver' => 'sqlsrv',
+    'host' => "185.165.117.31",
+    'port' => "1433",
+    'database' => "newdb",
+    'username' => "newuser",
+    'password' => "New!@#456",
+    'charset' => 'utf8',
+    'prefix' => '',
+    'pooling' => false,
+    'options' => [
+        "TrustServerCertificate" => true, // این گزینه را اضافه کنید
+    ],
+],
+
+
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
